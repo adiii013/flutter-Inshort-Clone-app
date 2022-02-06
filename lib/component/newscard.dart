@@ -11,18 +11,26 @@ class NewsCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 6,
-      child: Column(children: [
-        Text(title,style: TextStyle(fontSize: 20),),
-        Container(
-          width: double.infinity,
-          height: 200,
-          child: Image.network(url),
-        ),
-        Text(description),
-        Text(content)
-      ],),
+   
+   
+
+    return Container(
+      margin: EdgeInsets.all(10),
+      child: Card(
+        shadowColor: Colors.black,
+        elevation: 6,
+        child: Column(
+          children: [
+          Text(title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+          Container(
+            margin: EdgeInsets.all(15),
+            width: double.infinity,
+            height: 200,
+            child: Image.network(url),
+          ),
+          Text(content,style: TextStyle(fontSize: 17),),
+        ],),
+      ),
     );
   }
 }

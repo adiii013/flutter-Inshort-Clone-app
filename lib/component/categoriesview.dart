@@ -26,7 +26,8 @@ class _CategoriesViewState extends State<CategoriesView> {
       borderRadius: BorderRadius.circular(15),
       child: Container(
         padding: EdgeInsets.all(15),
-        child: Text(widget.title),
+        alignment: Alignment.center,
+        child: Text(widget.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [widget.color.withOpacity(0.7), widget.color],
