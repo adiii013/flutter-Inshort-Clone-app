@@ -25,7 +25,7 @@ class _NewsScreenState extends State<NewsScreen> {
 
       return jsonDecode(response.body)['articles'];
     }
-  
+
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle),
@@ -40,8 +40,16 @@ class _NewsScreenState extends State<NewsScreen> {
                 child: ListView.builder(
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
-                    String author = snapshot.data![index]['urlToImage'];
-                    return NewsCards();
+                    String content = snapshot.data![index]['content'];
+                    String title = snapshot.data![index]['title'];
+                    String description = snapshot.data![index]['description'];
+                    var url = snapshot.data![index]['urlToImage'];
+                    return NewsCards(
+                      content: content,
+                      title: title,
+                      description: description,
+                      url: url,
+                    );
                   },
                 ),
               );
